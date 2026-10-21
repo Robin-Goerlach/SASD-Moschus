@@ -1,0 +1,44 @@
+# Build outputs
+/build/
+/out/
+/dist/
+**/bin/
+**/obj/
+**/target/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+*.ninja
+.ninja_*
+
+# IDE and editor state
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.swp
+*~
+
+# Language tooling
+.nuget/
+.gradle/
+__pycache__/
+*.py[cod]
+
+# Test and coverage output
+coverage/
+Testing/
+*.profraw
+*.profdata
+*.gcda
+*.gcno
+
+# Private or unlicensed research material
+/docs/sources/scans/
+/tests/corpus/private/
+
+# Platform files
+.DS_Store
+Thumbs.db
