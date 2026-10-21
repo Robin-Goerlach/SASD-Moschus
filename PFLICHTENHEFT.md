@@ -11,12 +11,14 @@
 | Status | Verbindliche Arbeitsgrundlage; offene Entscheidungen sind ausdrücklich gekennzeichnet |
 | Lizenz des Projekts | MIT |
 | Erste Zielmarke | Vollständige, überprüfte Format- und Werkzeug-Epoche bis einschließlich 31. Dezember 1990 |
+| Zugehöriges Lastenheft | [LASTENHEFT.md](LASTENHEFT.md) |
 
 ## 1. Zweck des Dokuments
 
-Dieses Pflichtenheft beschreibt, wie SASD Moschus die vereinbarten Ziele
-technisch und organisatorisch umsetzt. Es ist die verbindliche Grundlage für
-Architektur, Implementierung, Tests, Dokumentation und Abnahme.
+Dieses Pflichtenheft beschreibt, wie SASD Moschus die im
+[Lastenheft](LASTENHEFT.md) festgelegten Ziele und Anforderungen technisch und
+organisatorisch umsetzt. Es ist die verbindliche Grundlage für Architektur,
+Implementierung, Tests, Dokumentation und Abnahme.
 
 Moschus ist kein bloßer Dateikonverter. Das Projekt soll historische
 Dateiformate verlässlich erkennen, lesen, validieren, schreiben und – soweit

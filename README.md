@@ -13,11 +13,12 @@ without hiding historical differences behind a single ambiguous format name.
 
 ## Requirements specification
 
-The authoritative project requirements are defined in the German
-[Pflichtenheft](PFLICHTENHEFT.md). It covers the 1990 format horizon, the
-portable C89/C90 core, staged migration from early C++ to C++20, supported
-compiler families, security boundaries, conformance tests, and release
-acceptance.
+The German [Lastenheft](LASTENHEFT.md) defines what Moschus must deliver and
+why: user needs, scope, priorities, deliverables, quality goals, and acceptance
+criteria. The related [Pflichtenheft](PFLICHTENHEFT.md) defines how those
+requirements are implemented, including the 1990 format horizon, portable
+C89/C90 core, staged migration from early C++ to C++20, compiler families,
+security boundaries, and conformance testing.
 
 ## Goals
 
