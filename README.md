@@ -11,6 +11,14 @@ without hiding historical differences behind a single ambiguous format name.
 > The repository is in its foundation phase. The structure and support policy
 > are being established; no file format is production-ready yet.
 
+## Requirements specification
+
+The authoritative project requirements are defined in the German
+[Pflichtenheft](PFLICHTENHEFT.md). It covers the 1990 format horizon, the
+portable C89/C90 core, staged migration from early C++ to C++20, supported
+compiler families, security boundaries, conformance tests, and release
+acceptance.
+
 ## Goals
 
 - Preserve access to historical data through documented, testable codecs.
@@ -21,7 +29,8 @@ without hiding historical differences behind a single ambiguous format name.
 - Read and write supported formats with explicit compatibility levels.
 - Report every potentially lossy conversion instead of silently discarding
   information.
-- Supply a C++20 command-line converter built on the C++ library.
+- Supply a C++ command-line converter that begins with the 1990-compatible
+  core and evolves through documented C++ language epochs.
 - Progress from the 1989–1990 baseline toward current formats in dated,
   reviewable milestones.
 
@@ -30,10 +39,11 @@ without hiding historical differences behind a single ambiguous format name.
 | Component | Purpose | Initial technology |
 |---|---|---|
 | Format specifications | Canonical, language-neutral description of each format and version | Markdown and structured data |
-| C++ library | Reference implementation and foundation for the converter | C++20 |
-| C# library | Native .NET implementation of the shared contracts | Modern .NET |
-| Java library | Native JVM implementation of the shared contracts | Modern Java |
-| Moschus converter | Inspect, validate, and convert files | C++20 |
+| Portable core | Reference implementation for the 1990 language epoch | ANSI C89 / ISO C90 |
+| C++ library | Growing public API and later reference library | Early portable C++ through C++20 |
+| C# library | Later native .NET implementation of the shared contracts | Version to be decided by ADR |
+| Java library | Later native JVM implementation of the shared contracts | Version to be decided by ADR |
+| Moschus converter | Inspect, validate, and convert files | C++, following the active language epoch |
 | Conformance suite | Shared fixtures and expected results for every implementation | Language-neutral manifests |
 
 Additional language implementations can be added under `libraries/` without
@@ -93,9 +103,11 @@ targets, belong to subsequent historical milestones.
 ```text
 SASD-Moschus/
 ├── libraries/
-│   ├── cpp/                 C++20 reference library
-│   ├── csharp/              C#/.NET library
-│   └── java/                Java library
+│   ├── c89/                 portable core for the 1990 language epoch
+│   ├── cpp/                 staged C++ API through C++20
+│   ├── csharp/              later C#/.NET library
+│   └── java/                later Java library
+├── platform/                compiler, OS, integer, and DOS compatibility
 ├── tools/
 │   └── converter-cpp/       C++ command-line converter
 ├── specifications/          canonical, language-neutral format specifications
@@ -166,15 +178,18 @@ The planned sequence starts with infrastructure and simple tabular exchange
 formats, then adds dBASE, spreadsheets, formatted documents, raster graphics,
 vector/metafile formats, and finally broad conversion and hardening.
 
-See [ROADMAP.md](ROADMAP.md) for the milestone outline. The 1990 baseline is
-currently estimated at roughly 540 reviewable commits, with scope reserve for
-poorly documented variants and interoperability findings.
+See [ROADMAP.md](ROADMAP.md) for the milestone outline. With historical
+compiler support and controlled language migrations, the 1990 baseline is
+currently estimated at roughly 750 to 900 reviewable commits.
 
 ## Building
 
 Build instructions will be added with the first implementation milestone.
-Until then, the repository intentionally contains architecture and directory
-contracts rather than placeholder APIs that might prematurely become public.
+The first automated baseline will compile the portable core with a current GCC
+in strict C90 mode. Authentic Borland and Microsoft builds will use local,
+documented toolchains selected by ADR-0002; proprietary compilers will not be
+distributed by this repository. Until those decisions are recorded, the
+repository intentionally avoids placeholder public APIs.
 
 ## Contributing
 

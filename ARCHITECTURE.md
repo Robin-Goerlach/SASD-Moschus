@@ -23,9 +23,14 @@ Each directory below `libraries/` contains an independent implementation.
 Libraries expose equivalent concepts where practical, while following the
 idioms and safety facilities of their language.
 
-The C++20 library is the initial reference implementation because the converter
-is written in C++ and historical binary formats benefit from explicit,
-bounded byte handling.
+The 1990 language epoch begins with a portable ANSI C89 / ISO C90 core so that
+the same codec logic can be verified with GCC and selected historical Borland
+and Microsoft C toolchains. The command-line converter is written in C++ and
+uses only the compiler subset defined for the active language epoch.
+
+After the 1990 release is tagged, the C++ implementation advances in controlled
+steps through C++98, C++03, C++11, C++14, C++17, and C++20. Old formats remain
+covered by the shared conformance suite during every migration.
 
 ### 2.3 Neutral domain models
 
@@ -58,6 +63,16 @@ The planned commands are:
 `tests/conformance/` describes language-neutral expected behaviour.
 `tests/corpus/` contains only files that may lawfully be redistributed,
 together with provenance and checksums.
+
+### 2.6 Compiler and platform compatibility
+
+`platform/` centralises compiler detection, integer-width guarantees,
+byte-order access, checked arithmetic, file adapters, resource limits, DOS
+memory models, and generation of 8.3-compatible source bundles.
+
+Conditional compilation must remain inside this layer whenever practical.
+Historical proprietary compilers are locally supplied tools and are never
+vendored or downloaded by public CI.
 
 ## 3. Codec contract
 
@@ -103,18 +118,22 @@ mode.
 
 ## 6. Versioning
 
-Format versions and library releases are different concepts. Public APIs follow
-semantic versioning. Historical writers require an explicit target format
-version; they must not silently select the newest known variant.
+Format versions, product releases, format horizons, and language epochs are
+different concepts. Public APIs follow semantic versioning once declared
+stable. Historical writers require an explicit target format version; they
+must not silently select the newest known variant. Each completed language
+epoch is preserved by a reproducible tag before the minimum language level is
+raised.
 
 ## 7. Dependency direction
 
 ```text
-converter -> C++ public library -> codec interfaces -> domain models
-                                      |
-                                      +-> bounded byte/text primitives
+converter -> active C++ API -> portable C89/C90 core -> codec interfaces
+                                      |                    |
+                                      |                    +-> domain models
+                                      +-> platform compatibility
 
-language libraries -> shared specifications + conformance manifests
+all language libraries -> shared specifications + conformance manifests
 ```
 
 Specifications and conformance data never depend on an implementation.
