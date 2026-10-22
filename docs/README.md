@@ -20,6 +20,7 @@ support implementation and verification.
 
 | Document | Purpose |
 |---|---|
+| [Agent instructions](../AGENTS.md) | Autonomous Codex workflow, WSL rules and Definition of Done |
 | [Contributing](../CONTRIBUTING.md) | Contribution workflow and review expectations |
 | [Governance](../GOVERNANCE.md) | Roles and decision authority |
 | [Security](../SECURITY.md) | Threat model and private vulnerability process |

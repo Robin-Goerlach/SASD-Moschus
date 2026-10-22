@@ -8,12 +8,13 @@ support.
 
 Read these documents first:
 
-1. [Lastenheft](LASTENHEFT.md) — what the project must achieve;
-2. [Pflichtenheft](PFLICHTENHEFT.md) — technical requirements;
-3. [Architecture](ARCHITECTURE.md) — boundaries and dependency rules;
-4. [Roadmap](ROADMAP.md) — current order of work;
-5. [Security policy](SECURITY.md) — private vulnerability reporting;
-6. [Source and corpus policy](docs/SOURCE-AND-CORPUS-POLICY.md) — copyright,
+1. [Agent instructions](AGENTS.md) — repository-wide autonomous workflow and WSL rules;
+2. [Lastenheft](LASTENHEFT.md) — what the project must achieve;
+3. [Pflichtenheft](PFLICHTENHEFT.md) — technical requirements;
+4. [Architecture](ARCHITECTURE.md) — boundaries and dependency rules;
+5. [Roadmap](ROADMAP.md) — current order of work;
+6. [Security policy](SECURITY.md) — private vulnerability reporting;
+7. [Source and corpus policy](docs/SOURCE-AND-CORPUS-POLICY.md) — copyright,
    provenance and test-file rules.
 
 Do not upload scans, book pages, proprietary compiler files, application

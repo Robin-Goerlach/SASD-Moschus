@@ -30,7 +30,8 @@ Important entry points are:
 - [Pflichtenheft](PFLICHTENHEFT.md) — technical requirements;
 - [Architecture](ARCHITECTURE.md) — components, boundaries, and design rules;
 - [Roadmap](ROADMAP.md) — milestones through the 1990 release and C++20;
-- [Contributing](CONTRIBUTING.md) and [Governance](GOVERNANCE.md);
+- [Codex/agent instructions](AGENTS.md), [Contributing](CONTRIBUTING.md), and
+  [Governance](GOVERNANCE.md);
 - [Security policy](SECURITY.md), [Support](SUPPORT.md), and
   [Changelog](CHANGELOG.md);
 - [Glossary](docs/GLOSSARY.md), [source and corpus policy](docs/SOURCE-AND-CORPUS-POLICY.md),
