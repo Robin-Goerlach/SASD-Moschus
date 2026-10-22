@@ -20,6 +20,22 @@ requirements are implemented, including the 1990 format horizon, portable
 C89/C90 core, staged migration from early C++ to C++20, compiler families,
 security boundaries, and conformance testing.
 
+
+## Documentation
+
+The [documentation index](docs/README.md) links the complete project set.
+Important entry points are:
+
+- [Lastenheft](LASTENHEFT.md) — product needs, scope, and acceptance;
+- [Pflichtenheft](PFLICHTENHEFT.md) — technical requirements;
+- [Architecture](ARCHITECTURE.md) — components, boundaries, and design rules;
+- [Roadmap](ROADMAP.md) — milestones through the 1990 release and C++20;
+- [Contributing](CONTRIBUTING.md) and [Governance](GOVERNANCE.md);
+- [Security policy](SECURITY.md), [Support](SUPPORT.md), and
+  [Changelog](CHANGELOG.md);
+- [Glossary](docs/GLOSSARY.md), [source and corpus policy](docs/SOURCE-AND-CORPUS-POLICY.md),
+  and [release process](docs/RELEASE-PROCESS.md).
+
 ## Goals
 
 - Preserve access to historical data through documented, testable codecs.
